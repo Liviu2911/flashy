@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #FB9E3A;
+  --secondary: #E6521F;
+  --transition: all 0.3s linear;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --ease-t: var(--transition);
+}
+
+.flexi-center {
+  display: flex;
+  align-items: center;
+}
