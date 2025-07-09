@@ -20,7 +20,7 @@ function Features() {
   }, [])
 
   return (
-    <div className="relative" ref={dropDownRef}>
+    <div className="relative flex flex-col items-center" ref={dropDownRef}>
       <button
         className={`${dropDown && "bg-stone-800 text-primary"} opacity-80 hover:opacity-100 flexi-center gap-2 hover:bg-stone-800 hover:text-primary px-3 py-1.5 rounded transition-all cursor-pointer outline-none`}
         onClick={() => setDropDown(!dropDown)}

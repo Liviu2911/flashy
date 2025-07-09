@@ -11,7 +11,7 @@ function DropDown() {
     animate={{ opacity: 1}}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.25 }}
-      className="-left-32 top-12 flex flex-col gap-2 p-2 text-stone-300 rounded-lg bg-stone-900 absolute max-w-fit"
+      className="flex top-12 flex-col gap-2 p-2 text-stone-300 rounded-lg bg-stone-900 absolute max-w-fit"
     >
       <Feature delay={0.25} Icon={SlOrganization} text="Stay organized" />
       <Feature delay={0.50} Icon={TbCardsFilled} text="Learn using flashcards" />

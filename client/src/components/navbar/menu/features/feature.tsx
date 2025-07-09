@@ -24,7 +24,7 @@ function Feature({ Icon, text, delay }: Props) {
         document.documentElement.style.setProperty("--mouse-x", `${x}px`)
         document.documentElement.style.setProperty("--mouse-y", `${y}px`)
       }}
-      className="glow cursor-pointer relative overflow-hidden border border-stone-700 opacity-80 flex items-center flex-row bg-stone-800 rounded gap-2 p-4"
+      className="glow hover:opacity-100 transition-all cursor-pointer relative overflow-hidden border border-stone-700 opacity-80 flex items-center flex-row bg-stone-800 rounded gap-2 p-4"
 
     >
       <span className="text-primary">
