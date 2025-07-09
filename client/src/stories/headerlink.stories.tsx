@@ -1,17 +1,15 @@
-// Replace react with the framework you are using, e.g. react-vite, nextjs, nextjs-vite, etc.
 import type { Meta, StoryObj } from '@storybook/react';
 import "../style/index.css"
 import "../style/landing.css"
 
-import DropDown from '../components/navbar/menu/features/dropdown';
-
+import HeaderLink from '../components/landingpage/hero/headerlink'; 
 const meta = {
   component: () => (
     <div className="w-full h-[100vh] bg-black absolute left-0 top-0">
-      <DropDown />
+      <HeaderLink />
     </div>
   ),
-} satisfies Meta<typeof DropDown>;
+} satisfies Meta<typeof HeaderLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
