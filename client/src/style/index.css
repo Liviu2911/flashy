@@ -4,6 +4,8 @@
   --primary: #FB9E3A;
   --secondary: #E6521F;
   --transition: all 0.3s linear;
+  --mouse-x: 10px;
+  --mouse-y: 10px;
 }
 
 @theme {

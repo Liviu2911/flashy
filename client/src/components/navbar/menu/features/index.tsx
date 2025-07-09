@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import DropDown from "./dropdown";
+import { AnimatePresence } from "motion/react";
 
 function Features() {
   const [dropDown, setDropDown] = useState(false);
@@ -10,7 +11,9 @@ function Features() {
     const handler = (e: MouseEvent) => {
       // @ts-ignore
       if (dropDownRef.current && !dropDownRef.current.contains(e.target))
-        setDropDown(false)
+        setTimeout(() => {
+          setDropDown(false)
+        }, 250)
     }
     document.addEventListener("mousedown", handler)
     return () => document.removeEventListener("mousedown", handler)
@@ -19,7 +22,7 @@ function Features() {
   return (
     <div className="relative" ref={dropDownRef}>
       <button
-        className="flexi-center gap-2 hover:bg-stone-800 hover:text-primary px-3 py-1.5 rounded transition-all cursor-pointer outline-none"
+        className={`${dropDown && "bg-stone-800 text-primary"} opacity-80 hover:opacity-100 flexi-center gap-2 hover:bg-stone-800 hover:text-primary px-3 py-1.5 rounded transition-all cursor-pointer outline-none`}
         onClick={() => setDropDown(!dropDown)}
       >
         Features
@@ -27,7 +30,9 @@ function Features() {
           <FaAngleDown />
         </span>
       </button>
-      {dropDown && <DropDown />}
+      <AnimatePresence>
+        {dropDown && <DropDown />}
+      </AnimatePresence>
     </div>
   )
 }

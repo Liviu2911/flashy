@@ -1,5 +1,5 @@
 import Features from "./features";
-import Navlink from "./navlink";
+import Navlink from "../navlink";
 
 function Menu() {
   return (
