@@ -12,7 +12,7 @@ function RootComponent() {
   return (
     <React.Fragment>
       <ThemeProvider value={{ theme, setTheme }}>
-        <div className={(theme === "dark" ? "bg-black text-stone-200" : "bg-stone-200 text-black") + " w-full h-[100vh] absolute left-0 top-0"}>
+        <div className={(theme === "dark" ? "bg-black text-stone-200" : "bg-stone-200 text-black") + " w-full min-h-[100vh] absolute left-0 top-0"}>
           <Outlet />
         </div>
       </ThemeProvider>

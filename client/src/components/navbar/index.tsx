@@ -9,7 +9,7 @@ function Navbar() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration, delay: 0.75 }}
-      className="z-20 flex items-center justify-between px-12 border-b border-stone-700 w-full h-20"
+      className="z-30 flex items-center justify-between px-12 border-b border-stone-700 w-full h-20"
     >
       <Link to="/" className="font-bold text-xl tracking-wide">
         <motion.h1

@@ -1,6 +1,6 @@
 .glow::before {
   background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.08),
       transparent 40%);
   content: "";
   opacity: 0;
@@ -41,4 +41,26 @@
 
 .hero-shadow {
   box-shadow: 0px 0px 50px 20px rgb(251, 158, 58, 0.2);
+}
+
+.heroimage {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), #000);
+}
+
+.testimonial-shadow {
+  box-shadow: inset 0px 0px 50px 5px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes carousel-animation {
+  0% {
+    transform: translateY(0);
+  } 100% {
+    transform: translateY(-769px);
+  }
+}
+
+.carousel {
+  animation: carousel-animation;
+  animation-duration: var(--carouse-time);
+  animation-timing-function: linear;
 }
