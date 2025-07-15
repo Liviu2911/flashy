@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 type Props = {
   testimonials: TestimonialType[]
-  duration: string
+  duration: number
 }
 
 function Carousel({ duration, testimonials }: Props) {
@@ -15,19 +15,19 @@ function Carousel({ duration, testimonials }: Props) {
     const switchIn = setInterval(() => {
       setC1(prev => prev === "carousel" ? "hidden" : "carousel");
       setC2(prev => prev === "carousel" ? "hidden" : "carousel");
-    }, 12000)
+    }, duration * 1000)
 
     return () => clearInterval(switchIn);
   }, [])
 
   return (
     <div className="h-[90vh] overflow-hidden">
-      <div style={{ animationDuration: duration }} className={c1 + " flex flex-col gap-4"}>
+      <div style={{ animationDuration: duration + 's' }} className={c1 + " flex flex-col gap-4"}>
         {testimonials.map((t, index) => (
           <Testimonial testimonial={t} key={index + t.name} />
         ))}
       </div>
-      <div style={{ animationDuration: duration }} className={c2 + " flex flex-col gap-4"}>
+      <div style={{ animationDuration: duration + 's' }} className={c2 + " flex flex-col gap-4"}>
         {testimonials.map((t, index) => (
           <Testimonial testimonial={t} key={index + t.name} />
         ))}
