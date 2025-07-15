@@ -6,6 +6,7 @@
   --transition: all 0.3s linear;
   --mouse-x: 10px;
   --mouse-y: 10px;
+  --testimonial-length: calc(-4 * 8 * 52px);
 }
 
 @theme {

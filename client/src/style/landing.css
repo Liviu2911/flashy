@@ -54,13 +54,15 @@
 @keyframes carousel-animation {
   0% {
     transform: translateY(0);
-  } 100% {
-    transform: translateY(-769px);
+  }
+
+  100% {
+    transform: translateY(var(--testimonial-length));
   }
 }
 
 .carousel {
   animation: carousel-animation;
-  animation-duration: var(--carouse-time);
   animation-timing-function: linear;
+  /* animation-duration: 12s; */
 }

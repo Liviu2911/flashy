@@ -1,20 +1,26 @@
 import type { TestimonialType } from "../../../types/testimonials";
 
-function Testimonial({ photo, name, text, job }: TestimonialType) {
+type Props = {
+  testimonial: TestimonialType,
+}
+
+function Testimonial({ testimonial }: Props) {
+  const { text, photo, name, job } = testimonial;
+
   return (
-    <div className="rounded-lg border border-stone-600 p-4 flex flex-col justify-between w-96 h-48">
-    <div className="flex flex-col gap-1">
-      <p>{text}</p>
-      <span>
-      ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
-      </span>
-    </div>
-      <div className="flex flex-row gap-4 text-stone-400 items-center">
-        <img src={photo} className="w-8 h-8 rounded-full" />
-        <div>
-          <h1>{name}</h1>
-          <h3>{job}</h3>
+    <div className={"rounded-lg border border-stone-600 p-4 flex flex-col justify-between max-w-96 h-48"}>
+      <div className="flex flex-col gap-1">
+        <p>{text}</p>
+        <span>
+          ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
+        </span>
+      </div>
+      <div className="w-full flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <img src={photo} className="rounded-full w-8 h-8" />
+          <h1 className="opacity-80">@{name}</h1>
         </div>
+        <h1 className="opacity-80">{job}</h1>
       </div>
     </div>
   )
