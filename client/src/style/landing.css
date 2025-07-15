@@ -44,7 +44,7 @@
 }
 
 .heroimage {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), #000);
+  background: linear-gradient(transparent 30%, #000 70%);
 }
 
 .testimonial-shadow {
