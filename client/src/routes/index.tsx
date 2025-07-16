@@ -3,7 +3,9 @@ import Bgstars from '../components/landingpage/bgstars'
 import Navbar from '../components/navbar'
 import Hero from "../components/landingpage/hero"
 import "../style/landing.css"
-import Testimonials from '../components/landingpage/testimonials'
+// import React from "react"
+// const Testimonials = React.lazy(() => import("../components/landingpage/testimonials"));
+import Testimonials from "../components/landingpage/testimonials"
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
@@ -20,8 +22,8 @@ function RouteComponent() {
           <h1 className="text-4xl font-bold">Testimonials</h1>
           <p className="text-lg text-stone-600 font-medium">Trusted by users around the world</p>
         </div>
-        <Testimonials />
       </div>
+      <Testimonials />
     </>
   )
 }

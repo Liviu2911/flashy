@@ -1,5 +1,5 @@
 import type { TestimonialType } from "../../../types/testimonials";
-import Testimonial from "./testimonial";
+import Testimonial from "./testimonial/index";
 import { useEffect, useState } from "react";
 
 type Props = {

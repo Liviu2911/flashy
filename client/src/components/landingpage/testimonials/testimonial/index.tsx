@@ -1,4 +1,4 @@
-import type { TestimonialType } from "../../../types/testimonials";
+import type { TestimonialType } from "../../../../types/testimonials";
 
 type Props = {
   testimonial: TestimonialType,

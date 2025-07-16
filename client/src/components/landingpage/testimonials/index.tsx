@@ -55,15 +55,15 @@ function Testimonials() {
 
   return (
     <div className="flex flex-row gap-6">
-      <Carousel duration={16} testimonials={[...testimonials, ...testimonials]} />
+      <Carousel duration={28} testimonials={[...testimonials, ...testimonials]} />
       <div className="lg:block hidden">
-        <Carousel duration={18} testimonials={[...testimonials, ...testimonials]} />
+        <Carousel duration={36} testimonials={[...testimonials, ...testimonials]} />
       </div>
       <div className="md:block hidden">
-        <Carousel duration={14} testimonials={[...testimonials, ...testimonials]} />
+        <Carousel duration={32} testimonials={[...testimonials, ...testimonials]} />
       </div>
       <div className="sm:block hidden">
-        <Carousel duration={20} testimonials={[...testimonials, ...testimonials]} />
+        <Carousel duration={30} testimonials={[...testimonials, ...testimonials]} />
       </div>
     </div >
   )

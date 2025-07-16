@@ -2,7 +2,7 @@ import { TbCardsFilled } from "react-icons/tb";
 import { PiStudent } from "react-icons/pi";
 import { SlOrganization } from "react-icons/sl";
 import { motion } from "motion/react";
-import Feature from "./feature";
+import Feature from "../feature";
 
 function DropDown() {
   return (
