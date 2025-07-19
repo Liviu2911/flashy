@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
-import DropDown from "./dropdown";
+import DropDown from "./dropdown/index";
 import { AnimatePresence } from "motion/react";
 
 function Features() {
