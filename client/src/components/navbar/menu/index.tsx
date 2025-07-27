@@ -3,11 +3,11 @@ import Navlink from "../navlink";
 
 function Menu() {
   return (
-    <div className="flexi-center gap-2">
-      <Navlink to="/pricing">Pricing</Navlink>
+    <div className="sm:flex hidden items-center gap-2">
+      <Navlink>Pricing</Navlink>
       <Features />
-      <Navlink to="/login">Log In</Navlink>
-      <Navlink to="/register">Create Account</Navlink>
+      <Navlink>Log In</Navlink>
+      <Navlink>Create Account</Navlink>
     </div>
   )
 }

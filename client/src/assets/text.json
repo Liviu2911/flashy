@@ -1,6 +1,11 @@
 {
   "features": {
-    "organized": "Our flashcard app is designed to make studying more efficient by offering powerful organization tools through decks and folders. With decks, you can group related flashcards together based on specific topics, subjects, or courses. Each deck serves as a focused collection, allowing you to study material in a targeted way. Whether you’re preparing for an exam, learning a new language, or reviewing key concepts, decks help keep your content structured and accessible.\n\nTo further streamline your study experience, the app also supports folders, which let you group multiple decks under broader categories. For example, you can create a folder for \"Biology\" and include separate decks for \"Genetics,\" \"Cell Structure,\" and \"Ecology.\" This hierarchical system allows you to easily manage a large number of flashcards without feeling overwhelmed.\n\nBoth decks and folders are fully customizable — you can rename them, move decks between folders, and reorder them to suit your preferences. This organization system not only keeps your study materials neat, but also helps improve retention by making it easier to focus on one area at a time. Whether you're a student, professional, or lifelong learner, decks and folders give you the control to study smarter."
+    "organized": {
+      "text": "Our flashcard app helps you study more efficiently with customizable decks and folders. Group flashcards by topic using decks, and organize decks into folders for a clear, manageable structure. This system keeps your materials neat, targeted, and easier to review, so you can study smarter whether you're a student, professional, or lifelong learner.",     
+      "quote": {
+        "text": "For every minute spent organizing, an hour is earned.",
+        "author": "Benjamin Franklin"
+      }
+    }
   }
 }
-

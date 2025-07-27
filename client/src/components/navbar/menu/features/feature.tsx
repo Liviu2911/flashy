@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+// import { Link } from "@tanstack/react-router";
 import type { IconType } from "react-icons";
 import { motion } from "motion/react";
 
@@ -15,8 +15,8 @@ function Feature({ Icon, text, delay }: Props) {
     animate={{ opacity: 1}}
     transition={{ duration: 0.25, delay }}
     >
-    <Link
-    to="/"
+    <div
+    // to="/"
       onMouseMove={e => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.x;
@@ -32,7 +32,7 @@ function Feature({ Icon, text, delay }: Props) {
       </span>
       <h1 className="font-medium text-stone-400 w-68">{text}</h1>
 
-    </Link>
+    </div>
     </motion.div>
   )
 }
