@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import "../../../style/index.css"
 import "../../../style/landing.css"
-import Testimonials from '.';
+import Features from '.';
+import StoryBg from '../../deorators/bg';
 
 const meta = {
-  title: "Testimonials",
-  component: Testimonials,
+  title: "Features Detailed",
+  component: Features,
   decorators: [
     (Story) => (
-      <div className="text-stone-200 w-full h-[100vh] bg-black absolute left-0 top-0">
+      <StoryBg>
         <Story />
-      </div>
+      </StoryBg>
     )
   ]
-} satisfies Meta<typeof Testimonials>;
+} satisfies Meta<typeof Features>;
 
 export default meta;
-
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {}

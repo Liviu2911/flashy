@@ -9,7 +9,7 @@ function PremiumCard() {
       </div>
       <div className="flex flex-col gap-4 mt-4">
         {features.map(feature => (
-          <div className="flex flex-row items-center max-w-48 gap-2">
+          <div key={feature} className="flex flex-row items-center max-w-48 gap-2">
             <span className="text-2xl text-primary">
               <IoIosCheckmark />
             </span>
@@ -17,7 +17,7 @@ function PremiumCard() {
           </div>
         ))}
         <div className="mt-4 w-full h-[1px] rounded-full bg-primary opacity-50" />
-        <p className="text-sm text-stone-400 max-w-48">
+        <p className="text-sm text-stone-400 max-w-48 text-center">
         Get the full experience of a premium product designed to help you grow and learn.
         </p>
         <div className="w-full h-[1px] rounded-full bg-primary opacity-50" />
