@@ -7,7 +7,7 @@ import Dropdown from "./dropdown";
 function SmallMenu() {
   const { active, setActive } = useContext(ToggleSmallMenuContext)
   return (
-    <div className="sm:hidden flex relative">
+    <div className="sm:hidden w-full flex flex-row justify-end">
       <button onClick={() => setActive(prev => !prev)} className={`z-20 transition-all text-xl ${active ? "text-black" : "text-stone-200"}`}>
         <IoMenuSharp />
       </button>

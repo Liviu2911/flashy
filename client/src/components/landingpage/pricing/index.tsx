@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 function Pricing() {
   return (
-    <div className="flex flex-col gap-8 items-center mt-8">
+    <div className="sm:flex hidden flex-col gap-8 items-center mt-8">
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-4xl text-primary font-semibold">Pricing</h1>
         <h3 className="text-stone-600">Try it for yourself for free then get to the next level</h3>

@@ -10,7 +10,7 @@ function HeaderLink() {
     transition={{ duration: 0.75, delay: 0.5 }}
     >
       <Link
-        className="border-animation text-sm max-w-max opacity-80 hover:opacity-100 hover:text-primary hover:bg-stone-800 transition-all text-stone-400 py-1 px-4 rounded-full border border-stone-700 flexi-center flex-row gap-3"
+        className="sm:flex hidden border-animation text-sm max-w-max opacity-80 hover:opacity-100 hover:text-primary hover:bg-stone-800 transition-all text-stone-400 py-1 px-4 rounded-full border border-stone-700 items-center flex-row gap-3"
         to="/">
         <span>💫</span>
         <h1>Introducing AI studying</h1>

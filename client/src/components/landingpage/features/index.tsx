@@ -2,7 +2,7 @@ import OrganizedFeature from "./organized";
 
 function Features() {
   return (
-    <div>
+    <div className="hidden sm:flex">
       <OrganizedFeature />
     </div>
   )

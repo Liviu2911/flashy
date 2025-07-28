@@ -19,15 +19,7 @@ function RouteComponent() {
       <Navbar />
       <Bgstars />
       <Hero />
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col items-center gap-12 mt-10">
-          <div className="flex flex-col gap-4 items-center">
-            <h1 className="text-primary text-4xl font-bold">Testimonials</h1>
-            <p className="text-lg text-stone-600">Trusted by users around the world</p>
-          </div>
-        </div>
-        <Testimonials />
-      </div>
+      <Testimonials />
       <Pricing />
       <Features />
     </>

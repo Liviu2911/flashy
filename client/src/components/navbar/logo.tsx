@@ -9,7 +9,7 @@ function Logo() {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.75, delay: 0.5 }}
-      className={`${active ? "text-black" : "text-stone-200"} z-20 font-bold text-xl tracking-wide`}
+      className={`${active ? "text-primary" : "text-stone-200"} z-20 font-bold text-xl tracking-wide`}
     >
       Flashy
     </motion.h1>

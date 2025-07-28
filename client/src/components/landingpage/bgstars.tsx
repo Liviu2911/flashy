@@ -20,17 +20,19 @@ function Bgstars() {
     { x: 1240, y: 503 },
   ];
   return (
-    <div className="absolute">
-      {stars.map((star, index) => (
-        <motion.div
-          transition={{ repeat: Infinity, repeatType: "reverse", duration: 10 }}
-          initial={star}
-          animate={{ x: star.x + index * -2, y: star.y + index * 5 }}
-          exit={star}
-          key={index + "star"}
-          className="opacity-30 w-1 h-1 bg-white rounded-full"
-        />
-      ))}
+    <div className="w-full overflow-hidden absolute">
+      <div className="absolute">
+        {stars.map((star, index) => (
+          <motion.div
+            transition={{ repeat: Infinity, repeatType: "reverse", duration: 10 }}
+            initial={star}
+            animate={{ x: star.x + index * -2, y: star.y + index * 5 }}
+            exit={star}
+            key={index + "star"}
+            className="opacity-30 w-1 h-1 bg-white rounded-full"
+          />
+        ))}
+      </div>
     </div>
   )
 }
