@@ -1,10 +1,8 @@
 // import { Link } from "@tanstack/react-router";
 
-import type { Children } from "../../types/default";
-
 type Props = {
   // to: string
-  children: Children
+  children: string
 }
 
 function Navlink({ children }: Props) {

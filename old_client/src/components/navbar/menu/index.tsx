@@ -7,9 +7,7 @@ function Menu() {
       <Navlink>Pricing</Navlink>
       <Features />
       <Navlink>Log In</Navlink>
-      <span className="transition-all text-stone-200 cursor-pointer bg-primary px-3 py-1.5 rounded hover:opacity-80">
-        Create Account
-      </span>
+      <Navlink>Create Account</Navlink>
     </div>
   )
 }
