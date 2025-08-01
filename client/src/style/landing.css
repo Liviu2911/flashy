@@ -1,3 +1,11 @@
-/* .star-shadow { */
-/*   box-shadow: 0px 0px 10px white; */
-/* } */
+.glow {
+  box-shadow: 0 0 100px 50px var(--color-primary);
+}
+
+.heroimage-shadow {
+  box-shadow: 0 0px 100px 100px var(--color-shadow);
+}
+
+.hero-gradient {
+  background: linear-gradient(transparent, #000);
+}
