@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import Hero from "./hero"
+import Insights from "./insights"
 import { AnimatePresence, motion } from "motion/react";
 import ToggleSmallMenuContext from "../../contexts/togglesmallmenu/context";
 import "../../style/landing.css";
@@ -18,6 +19,7 @@ function LandingPage() {
           className="relative z-20"
         >
           <Hero />
+          <Insights />
         </motion.div>
       )}
     </AnimatePresence>
