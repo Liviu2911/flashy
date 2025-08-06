@@ -15,11 +15,11 @@ function RouteComponent() {
 
   return (
     <>
+      <Stars />
       <ToggleSmallMenuProvider value={{ active, setActive }}>
         <Navbar />
         <LandingPage />
       </ToggleSmallMenuProvider>
-      <Stars />
     </>
   )
 }

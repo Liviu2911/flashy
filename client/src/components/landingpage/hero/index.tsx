@@ -26,10 +26,6 @@ function Hero() {
         </h3> */}
       </div>
       <Image />
-      <h3 className="text-stone-400 font-medium text-center sm:leading-8 leading-6 sm:text-xl text-sm">
-        Transform your study habits with <br className="sm:hidden block" /> intelligent flashcards that <br className="sm:block hidden" />
-         adapt to your learning pace.
-      </h3>
     </motion.div>
   )
 }
