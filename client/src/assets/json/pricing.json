@@ -5,13 +5,20 @@
     "Up to 5 folders",
     "Up to 30 flashcards"
   ],
+  "standard": [
+    "Access to flashcards",
+    "Access to folders",
+    "Up to 10 folders",
+    "Up to 60 flashcards",
+    "Use AI to get hints"
+  ],
   "premium": [
     "Access to flashcards",
     "Access to folders",
-    "Up to 5 folders",
-    "Up to 30 flashcards",
-    "Take notes while studying",
+    "Unlimited folders",
+    "Unlimited flashcards",
     "Use AI to get hints",
+    "Take notes while studying",
     "Use AI to generate flashcards"
   ]
 }
