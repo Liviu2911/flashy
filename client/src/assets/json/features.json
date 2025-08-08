@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Stay organized",
+    "description": "Keep all your flashcards, notes, and decks neatly organized in one place.",
+    "color": "bg-red-400"
+  },
+  {
+    "title": "Generate flashcards",
+    "description": "Automatically create flashcards from your notes or text input.",
+    "color": "bg-green-400"
+  },
+  {
+    "title": "Take notes",
+    "description": "Jot down important points while you study.",
+    "color": "bg-sky-400"
+  },
+  {
+    "title": "Get hints",
+    "description": "Get helpful hints or clues to guide your memory without giving everything away.",
+    "color": "bg-emerald-400"
+  },
+  {
+    "title": "Learn faster",
+    "description": "Use spaced repetition and smart learning techniques to boost memory retention.",
+    "color": "bg-purple-400"
+  },
+  {
+    "title": "Progress tracking",
+    "description": "Monitor your learning journey with stats like accuracy, study time, and mastered cards.",
+    "color": "bg-rose-400"
+  },
+  {
+    "title": "Generate test",
+    "description": "Instantly turn flashcards into customizable quizzes or tests to challenge yourself.",
+    "color": "bg-pink-400"
+  },
+  {
+    "title": "Custom card creation",
+    "description": "Build your own flashcards by adding symbols and not only.",
+    "color": "bg-yellow-400"
+  }
+]

@@ -1,11 +1,12 @@
 import pricing from "../../../assets/json/pricing.json" assert { type: "module" };
-import Badge from "./badge";
+import Badge from "../../badge";
 import PricingTemplate from "./template";
 import { TbCurrencyDollarOff } from "react-icons/tb";
 import { RiVipDiamondLine } from "react-icons/ri";
 import { BiCrown } from "react-icons/bi";
 import { useState } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
+import { LuCircleDollarSign } from "react-icons/lu";
 
 function Pricing() {
   const [current, setCurrent] = useState(1);
@@ -13,7 +14,7 @@ function Pricing() {
 
   return (
     <div className="flex flex-col sm:gap-6 gap-3 items-center w-full relative z-40 sm:mt-32 -mt-10">
-      <Badge />
+      <Badge Icon={LuCircleDollarSign} text="Pricing" />
 
       <div className="flex relative z-20 flex-col gap-2 items-center">
         <h1 className="sm:text-4xl text-2xl font-bold flex flex-row items-center gap-2">

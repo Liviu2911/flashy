@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import ToggleSmallMenuContext from "../../contexts/togglesmallmenu/context";
 import "../../style/landing.css";
 import Pricing from "./pricing";
+import Features from "./features";
 
 function LandingPage() {
   const { active } = useContext(ToggleSmallMenuContext);
@@ -22,6 +23,7 @@ function LandingPage() {
           <Hero />
           <Insights />
           <Pricing />
+          <Features />
         </motion.div>
       )}
     </AnimatePresence>

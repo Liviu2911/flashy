@@ -10,7 +10,7 @@ type Props = {
 
 function PricingTemplate({ Icon, title, price, features }: Props) {
   return (
-    <div className={`border border-gray-700 ${title === "Premium" ? "bg-gray-800" : "bg-black"} sm:w-72 w-64 rounded-lg p-4 sm:pb-16 pb-12 flex flex-col gap-4`}>
+    <div className={`border border-gray-700 ${title === "Premium" ? "bg-gray-900" : "bg-black"} sm:w-72 w-64 rounded-lg p-4 sm:pb-16 pb-12 flex flex-col gap-4`}>
       <div className="flex flex-row justify-start">
         <span className="p-2 rounded-lg border border-gray-500 bg-gray-900 text-primary">
           <Icon />

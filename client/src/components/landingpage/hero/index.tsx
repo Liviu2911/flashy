@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import HeroLabel from "./label";
+import HeroBadge from "./badge";
 import Image from "./image";
 
 function Hero() {
@@ -10,7 +10,7 @@ function Hero() {
       transition={{ duration: 1, delay: 1, ease: "linear" }}
       className="flex z-40 w-full items-center flex-col sm:gap-8 gap-4 sm:mt-8 mt-4"
     >
-      <HeroLabel />
+      <HeroBadge />
       <div className="flex flex-col gap-4 justify-center">
         <div className="sm:hidden block rounded-full w-[1px] absolute top-28 left-8 z-10 opacity-50 bg-primary scale-200 glow" />
         <h1 className="text-center text-stone-200 sm:font-bold font-semibold sm:text-7xl text-2xl sm:leading-20 leading-8">
