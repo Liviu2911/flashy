@@ -11,8 +11,8 @@ import { FaNewspaper } from "react-icons/fa6";
 function Features() {
   const icons = [BsBoxes, RiAiGenerate, LuNotebookPen, FaRegLightbulb, PiSpeedometerThin, GiProgression, GiMoebiusStar, FaNewspaper];
   return (
-    <div className="grid grid-cols-4 gap-4 items-center">
-      {features.map((f, i) => <Feature color={f.color} Icon={icons[i]} title={f.title} description={f.description} />)}
+    <div className="sm:grid sm:grid-cols-4 flex flex-col gap-4 items-center">
+      {features.map((f, i) => <Feature key={f.color + f.title} color={f.color} Icon={icons[i]} title={f.title} description={f.description} />)}
     </div>
   )
 }

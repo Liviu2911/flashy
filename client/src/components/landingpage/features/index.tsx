@@ -4,7 +4,7 @@ import FeaturesComp from "./features";
 
 function Features() {
   return (
-    <div className="flex flex-col gap-8 items-center w-full p-12 mt-20">
+    <div className="flex flex-col gap-8 items-center w-full p-12 sm:mt-12">
       <Badge Icon={BsStars} text="Features" />
 
       <div className="flex flex-col text-center gap-2">

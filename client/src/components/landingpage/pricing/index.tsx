@@ -25,13 +25,7 @@ function Pricing() {
         </h3>
       </div>
 
-      {/* <div className="w-full sm:flex hidden flex-row gap-12 justify-center">
-        <PricingTemplate Icon={TbCurrencyDollarOff} title="Free" price={0} features={pricing.free} />
-        <PricingTemplate Icon={RiVipDiamondLine} title="Standard" price={4.99} features={pricing.standard} />
-        <PricingTemplate Icon={BiCrown} title="Premium" price={9.99} features={pricing.premium} />
-      </div> */}
-
-      <div className="flex flex-row gap-8 relative w-full">
+     <div className="flex flex-row gap-8 relative w-full">
 
         <div className="sm:hidden">
           <button onClick={() => setCurrent(prev => prev > 0 ? prev - 1 : prev)} className="z-50 absolute left-10 text-xl top-64">
@@ -43,7 +37,7 @@ function Pricing() {
         </div>
 
         <div className="flex w-full justify-center">
-          <div className="overflow-hidden sm:overflow-visible w-[280px] sm:h-auto h-[100vh] relative">
+          <div className="overflow-hidden sm:overflow-visible w-[280px] sm:h-auto h-[60vh] relative">
             <div className="absolute sm:relative sm:w-full flex flex-row sm:gap-12 sm:justify-center gap-8 transition-all" style={{ left: isMobile ? -current * (64 * 4 + 32) : 0 }}>
               <PricingTemplate Icon={TbCurrencyDollarOff} title="Free" price={0} features={pricing.free} />
               <PricingTemplate Icon={RiVipDiamondLine} title="Standard" price={4.99} features={pricing.standard} />
