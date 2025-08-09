@@ -12,7 +12,11 @@ function Hero() {
     >
       <HeroBadge />
       <div className="flex flex-col gap-4 justify-center">
-        <div className="sm:hidden block rounded-full w-[1px] absolute top-28 left-8 z-10 opacity-50 bg-primary scale-200 glow" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 0.5 }}
+          className="sm:hidden block rounded-full w-[1px] absolute top-28 left-8 z-10 opacity-50 bg-primary scale-200 glow" />
         <h1 className="text-center text-stone-200 sm:font-bold font-semibold sm:text-7xl text-2xl sm:leading-20 leading-8">
           The modern way
           <br />

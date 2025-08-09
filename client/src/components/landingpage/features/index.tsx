@@ -4,8 +4,9 @@ import FeaturesComp from "./features";
 import ScrollAnimation from "../../scrollAnimation";
 
 function Features() {
+  const isMobile = window.innerWidth < 640;
   return (
-    <ScrollAnimation threshold={0.4}>
+    <ScrollAnimation threshold={isMobile ? 0.15 : 0.3}>
       <div className="flex flex-col gap-8 items-center w-full p-12 sm:mt-12">
         <Badge Icon={BsStars} text="Features" />
 

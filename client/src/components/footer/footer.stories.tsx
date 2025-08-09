@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import "../../style/index.css"
 import "../../style/landing.css"
-import Navbar from '.';
+import Footer from '.';
 import StoryBg from '../deorators/bg';
 
 const meta = {
-  title: "Navbar",
-  component: Navbar,
+  title: "Footer",
+  component: Footer,
   decorators: [
     (Story) => (
       <StoryBg>
@@ -14,7 +14,7 @@ const meta = {
       </StoryBg>
     )
   ]
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
