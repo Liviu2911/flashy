@@ -3,7 +3,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 function Socials() {
   return (
-    <div className="flex text-lg flex-row gap-3 items-center">
+    <div className="flex text-lg flex-row gap-3 items-center socials">
       <button>
         <FaInstagram />
       </button>
