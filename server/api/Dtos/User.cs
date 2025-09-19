@@ -1,8 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace api.Dtos;
 
 public class CreateUser
 {
-  public string Username { get; set; } = String.Empty;
-  public string Email { get; set; } = String.Empty;
-  public string Password { get; set; } = String.Empty;
+  [Required]
+  public string? Username { get; set; } 
+  [Required]
+  [EmailAddress]
+  public string? Email { get; set; } 
+  [Required]
+  public string? Password { get; set; } 
 }

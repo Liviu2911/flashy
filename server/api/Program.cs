@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using api.Data;
 using api.Models;
+using api.Service;
+using api.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,7 @@ builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FlashyDbContext>(opts => opts.UseNpgsql(connectionString));
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
   options.Password.RequireDigit = true;
