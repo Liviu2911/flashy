@@ -1,21 +1,21 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import FormImage from "../../components/form/image";
+import LoginForm from "../../components/form/login";
 
 export const Route = createFileRoute("/login/")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const [error, setError] = useState("");
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setError("");
-    console.log("valid");
-  };
-
   return (
-    <div className="flex flex-col gap-8 items-center">
-   </div>
+    <div className="flex w-full justify-center">
+      <div className="mt-24 flex flex-row justify-between p-12 w-[65%] bg-stone-900 rounded-lg">
+        <FormImage />
+        <div className="h-full flex items-center">
+          <LoginForm />
+        </div>
+      </div>
+    </div>
   );
 }

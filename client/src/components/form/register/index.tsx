@@ -2,7 +2,7 @@ import { useState } from "react";
 import Input from "../input";
 import { FaCheck } from "react-icons/fa6";
 import Button from "../button";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { z } from "zod";
 
 function RegisterForm() {
@@ -15,7 +15,9 @@ function RegisterForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const navigate = useNavigate();
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError({
       email: "",
@@ -51,7 +53,7 @@ function RegisterForm() {
         "Passwords don't match",
       );
 
-    const res = scheme.safeParse({
+    const schemeRes = scheme.safeParse({
       username,
       email,
       password,
@@ -60,8 +62,8 @@ function RegisterForm() {
 
     if (!tc) setErrorMessage("You must agree to the Terms & Conditions");
 
-    if (!res.success) {
-      const errors = res.error.format();
+    if (!schemeRes.success) {
+      const errors = schemeRes.error.format();
       setError((prev) => ({
         ...prev,
         email: errors.email?._errors[0] || "",
@@ -69,8 +71,31 @@ function RegisterForm() {
         passwordAgain: errors._errors[0] || "",
         username: errors.username?._errors[0] || "",
       }));
-      setErrorMessage(res.error.issues[0].message);
+      setErrorMessage(schemeRes.error.issues[0].message);
+      return;
     }
+
+    const res = await fetch("http://localhost:5243/api/account/register", {
+      body: JSON.stringify({ password, username, email }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    const json = await res.json();
+
+    console.log(json);
+    if (!json.token || !json.username) {
+      console.log(json);
+      setErrorMessage(json[0].description);
+      return;
+    }
+
+    document.cookie = "username=" + encodeURIComponent(json.username);
+    document.cookie = "token=" + encodeURIComponent(json.token);
+
+    navigate({ to: "/" });
   };
 
   return (
