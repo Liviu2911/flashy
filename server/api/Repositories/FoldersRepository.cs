@@ -17,7 +17,7 @@ public class FoldersRepository : IFoldersRepository
 
   public async Task<List<Folder>> GetFolders(string username)
   {
-    var folders = await _context.Folders.Where(f => f.User == username).ToListAsync();
+    var folders = await _context.Folders.Where(f => f.User == username).Include(f => f.Flashcards).ToListAsync();
     return folders;
   }
 
