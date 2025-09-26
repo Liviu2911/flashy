@@ -9,6 +9,9 @@ public class FlashyDbContext : IdentityDbContext<AppUser>
 {
   public FlashyDbContext(DbContextOptions opts) : base (opts)
   { }
+  public DbSet<Folder> Folders { get; set; }
+  public DbSet<Flashcard> Flashcards { get; set; }
+
 
   protected override void OnModelCreating(ModelBuilder builder)
   {
@@ -30,4 +33,5 @@ public class FlashyDbContext : IdentityDbContext<AppUser>
     };
     builder.Entity<IdentityRole>().HasData(roles);
   }
+
 }

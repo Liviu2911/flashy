@@ -1,8 +1,8 @@
-using api.Interface;
+using api.Interfaces;
 using api.Models;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using System.Security.Claims;
+using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 
 namespace api.Service;
@@ -20,25 +20,24 @@ public class TokenService : ITokenService
   public string CreateToken(AppUser user)
   { 
     var claims = new List<Claim>
-    {
+    { 
       new Claim(JwtRegisteredClaimNames.Email, user.Email),
-      new Claim(JwtRegisteredClaimNames.GivenName, user.UserName)
+      new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
     };
 
     var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256Signature);
 
-    var tokenDescriptor = new SecurityTokenDescriptor
-    {
+    var tokenDescriptor = new SecurityTokenDescriptor{
       Subject = new ClaimsIdentity(claims),
       Expires = DateTime.Now.AddDays(7),
       SigningCredentials = creds,
+      Audience = _config["JWT:Audience"],
       Issuer = _config["JWT:Issuer"],
-      Audience = _config["JWT:Audience"]
     };
 
     var tokenHandler = new JwtSecurityTokenHandler();
     var token = tokenHandler.CreateToken(tokenDescriptor);
-    
+
     return tokenHandler.WriteToken(token);
   }
 }

@@ -1,8 +1,9 @@
 using api.Models;
 using api.Dtos;
-using api.Interface;
+using api.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace api.Controller;
@@ -79,5 +80,21 @@ public class AccountController : ControllerBase
      return StatusCode(500, new { message = e.Message, trace = e.StackTrace, source = e.Source });
    }
 
+  }
+
+  [HttpPost("check")]
+  [Authorize]
+  public async Task<IActionResult> CheckAccount([FromBody] CheckUser user)
+  {
+    try {
+      var res = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == user.Username);
+      if (res == null) return StatusCode(404, "User not found");
+      return Ok("User is logged in");
+    } catch(Exception e)
+    {
+      return BadRequest(new { message = e.Message, trace = e.StackTrace });
+    }
+    // if (res == null) return Unauthorized("User doesn't exist");
+    // return Ok(new { message = "User is logged in" });
   }
 }
