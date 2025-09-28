@@ -29,9 +29,9 @@ public class AccountController : ControllerBase
       if (!ModelState.IsValid) return BadRequest(ModelState);
 
       var user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == loginUser.Username);
-      if (user == null) return Unauthorized("User not found");
+      if (user == null) return Unauthorized(new { message = "User not found" });
       var res = await _signInManager.CheckPasswordSignInAsync(user, loginUser.Password, false);
-      if (!res.Succeeded) return Unauthorized("User not found");
+      if (!res.Succeeded) return Unauthorized(new { message = "User not found"});
       return Ok(new NewUser
       {
         Email = user.Email,
@@ -88,13 +88,13 @@ public class AccountController : ControllerBase
   {
     try {
       var res = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == user.Username);
-      if (res == null) return StatusCode(404, "User not found");
-      return Ok("User is logged in");
+      if (res == null) return StatusCode(500, new { ok = false });
+      return Ok(new { ok = true });
     } catch(Exception e)
     {
       return BadRequest(new { message = e.Message, trace = e.StackTrace });
     }
-    // if (res == null) return Unauthorized("User doesn't exist");
-    // return Ok(new { message = "User is logged in" });
+
   }
+
 }

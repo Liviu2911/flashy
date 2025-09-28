@@ -18,17 +18,7 @@ function getCookies(): Record<string, string> {
   }
   res[key] = val;
 
-  return res;
+  return res as { username: string; token: string };
 }
 
-function useUser(): { username: string; token: string } | undefined {
-  const cookies = getCookies();
-  if (!cookies.token || !cookies.username) {
-    document.cookie = "";
-    return;
-  }
-
-  return cookies as { username: string, token: string };
-}
-
-export default useUser;
+export default getCookies;

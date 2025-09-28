@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using api.Models;
 
 namespace api.Dtos;
 
@@ -9,5 +8,6 @@ public class CreateFlashcard
   public string? Front { get; set; }
   [Required]
   public string? Back { get; set; }
-  public Folder? Folder { get; set; }
+  [Required]
+  public int FolderId { get; set; }
 }

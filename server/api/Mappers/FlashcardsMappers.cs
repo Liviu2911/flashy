@@ -11,7 +11,7 @@ public static class FlashcardsMappers
     {
       Front = createFlashcard.Front,
       Back = createFlashcard.Back,
-      Folder = createFlashcard.Folder,
+      FolderId = createFlashcard.FolderId,
     };
   }
 }

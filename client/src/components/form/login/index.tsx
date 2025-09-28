@@ -27,10 +27,11 @@ function LoginForm() {
       setErrorMessage("User not found");
       return;
     }
+
     document.cookie = "token=" + encodeURIComponent(json.token);
     document.cookie = "username=" + encodeURIComponent(json.username);
 
-    navigate({ to: "/" });
+    navigate({ to: "/" + username });
   };
 
   return (

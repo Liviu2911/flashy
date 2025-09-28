@@ -23,7 +23,7 @@ public class FoldersRepository : IFoldersRepository
 
   public async Task<Folder> CreateFolder(NewFolder newFolder)
   {
-    var folder = FromNewFolderToFolder(newFolder);
+    var folder = FromCreateFolderToFolder(newFolder);
     await _context.Folders.AddAsync(folder);
     await _context.SaveChangesAsync();
 

@@ -95,7 +95,7 @@ function RegisterForm() {
     document.cookie = "username=" + encodeURIComponent(json.username);
     document.cookie = "token=" + encodeURIComponent(json.token);
 
-    navigate({ to: "/" });
+    navigate({ to: "/" + username });
   };
 
   return (

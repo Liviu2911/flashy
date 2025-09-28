@@ -21,8 +21,22 @@ public class FoldersController : ControllerBase
   {
     var username = user.Username;
     var folders = await _repo.GetFolders(username); 
+    
+    var dto = folders.Select(f => new FolderDto 
+        {
+          Id = f.Id,
+          Name = f.Name,
+          User = f.User,
+          Flashcards = f.Flashcards.Select(fl => new FlashcardDto
+              {
+                Id = fl.Id,
+                Front = fl.Front,
+                Back = fl.Back,
+                FolderId = fl.Id,
+              }).ToList()
+        }).ToList();
 
-    return Ok(folders);
+    return Ok(dto);
   }
 
   [Authorize]

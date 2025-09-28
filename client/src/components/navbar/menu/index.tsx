@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import Navlink from "../navlink";
-import useUser from "../../../hooks/useuser";
 import UserMenu from "./usermenu";
+import getCookies from "../../../helpers/getCookies";
 
 function Menu() {
-  const user = useUser();
+  const user = getCookies().username;
 
   return (
     <div className="sm:flex hidden items-center gap-2">

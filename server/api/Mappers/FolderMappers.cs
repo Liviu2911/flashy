@@ -5,11 +5,12 @@ namespace api.Mappers;
 
 public static class FolderMappers
 {
-  public static Folder FromNewFolderToFolder(NewFolder newFolder)
+  public static Folder FromCreateFolderToFolder(NewFolder createFolder)
   {
     return new Folder 
     {
-      Name = newFolder.Name
+      Name = createFolder.Name,
+      User = createFolder.User
     };
   }
 }
