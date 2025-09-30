@@ -7,8 +7,8 @@ type Props = {
 
 function Button({ Icon, text }: Props) {
   return (
-    <div className="flex items-center gap-4 px-4 py-2 rounded text-gray-300 hover:bg-gray-600 transition-all">
-      <span className="text-sm">
+    <div className="flex items-center gap-4 px-4 py-1 rounded text-gray-300 hover:bg-gray-700 transition-all">
+      <span className="text-sm text-primary opacity-75">
         <Icon />
       </span>
       <h1>{text}</h1>
