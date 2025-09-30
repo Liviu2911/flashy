@@ -1,10 +1,10 @@
-import type { Children } from "./types/default";
+import type { Children } from "../types/default";
 import { useRef, useState, useEffect } from "react";
 
 type Props = {
-  threshold: number,
-  children: Children
-}
+  threshold: number;
+  children: Children;
+};
 
 function ScrollAnimation({ threshold, children }: Props) {
   const ref = useRef(null);
@@ -18,19 +18,24 @@ function ScrollAnimation({ threshold, children }: Props) {
           observer.disconnect();
         }
       },
-      { threshold }
-    )
+      { threshold },
+    );
 
     if (ref.current) observer.observe(ref.current);
 
     return () => observer.disconnect();
-  }, [])
+  }, []);
 
   return (
-    <div ref={ref} className={isVisible ? "opacity-100 scroll-animation" : "opacity-1 relative"}>
+    <div
+      ref={ref}
+      className={
+        isVisible ? "opacity-100 scroll-animation" : "opacity-1 relative"
+      }
+    >
       {children}
     </div>
-  )
+  );
 }
 
 export default ScrollAnimation;

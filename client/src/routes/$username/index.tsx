@@ -10,7 +10,7 @@ function RouteComponent() {
 
   return (
     <ProtectedProvider value={{ username }}>
-      <h1>{username}</h1>
+    <></> 
     </ProtectedProvider>
   )
 }
