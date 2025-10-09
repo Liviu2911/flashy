@@ -7,7 +7,7 @@ function Header() {
         <h1 className="text-gray-500">6 cards</h1>
       </div>
 
-      <button className="rounded bg-primary px-4 py-4 hover:opacity-80 transition-all">Add Card</button>
+      <button className="rounded bg-primary px-4 py-3 hover:opacity-80 transition-all">Add Card</button>
     </div>
   );
 }

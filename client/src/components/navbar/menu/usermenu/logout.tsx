@@ -7,6 +7,7 @@ export default function Logout() {
   const signOut = () => {
     document.cookie = "token=;path=/;max-age=0";
     document.cookie = "username=;path=/;max-age=0";
+    document.cookie = "userid=;path=/;max-age=0";
     navigate({ to: "/login" });
   };
   return (

@@ -29,12 +29,13 @@ public class AccountController : ControllerBase
       if (!ModelState.IsValid) return BadRequest(ModelState);
 
       var user = await _userManager.Users.FirstOrDefaultAsync(u => u.UserName == loginUser.Username);
-      if (user == null) return Unauthorized(new { message = "User not found" });
+      if (user == null) return Unauthorized(new { message = "User not found, user = null" });
       var res = await _signInManager.CheckPasswordSignInAsync(user, loginUser.Password, false);
-      if (!res.Succeeded) return Unauthorized(new { message = "User not found"});
+      if (!res.Succeeded) return Unauthorized(new { message = "User not found, password not good"});
       return Ok(new NewUser
       {
         Email = user.Email,
+        UserId = user.Id,
         Username = user.UserName,
         Token = _tokenService.CreateToken(user)
       });
@@ -51,11 +52,13 @@ public class AccountController : ControllerBase
     try
     {
       if (!ModelState.IsValid) return BadRequest(ModelState);
+      var userId = Guid.NewGuid().ToString();
 
       var appUser = new AppUser
       {
         UserName = newUser.Username,
         Email = newUser.Email,
+        Id = userId
       };
 
 
@@ -69,6 +72,7 @@ public class AccountController : ControllerBase
           {
             Email = appUser.Email,
             Username = appUser.UserName,
+            UserId = appUser.Id,
             Token = _tokenService.CreateToken(appUser)
           });
         }

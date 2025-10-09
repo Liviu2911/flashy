@@ -30,6 +30,7 @@ function LoginForm() {
 
     document.cookie = "token=" + encodeURIComponent(json.token);
     document.cookie = "username=" + encodeURIComponent(json.username);
+    document.cookie = "userid=" + encodeURIComponent(json.userId);
 
     navigate({ to: "/" + username });
   };

@@ -85,7 +85,6 @@ function RegisterForm() {
 
     const json = await res.json();
 
-    console.log(json);
     if (!json.token || !json.username) {
       console.log(json);
       setErrorMessage(json[0].description);
@@ -94,6 +93,7 @@ function RegisterForm() {
 
     document.cookie = "username=" + encodeURIComponent(json.username);
     document.cookie = "token=" + encodeURIComponent(json.token);
+    document.cookie = "userid=" + encodeURIComponent(json.userId);
 
     navigate({ to: "/" + username });
   };

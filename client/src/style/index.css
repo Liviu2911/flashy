@@ -60,3 +60,18 @@ footer {
   animation-duration: 5s;
   animation-timing-function: linear;
 }
+
+.flip-animation {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-align: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
