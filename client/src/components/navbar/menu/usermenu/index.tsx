@@ -1,14 +1,14 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import getCookies from "../../../../helpers/getCookies";
+import useCookies from "../../../../hooks/useCookies";
 import { AnimatePresence, motion } from "motion/react";
 import Settings from "./settings";
 import Logout from "./logout";
 
 function UserMenu() {
   const [userMenu, setUserMenu] = useState(false);
-  const { username } = getCookies();
+  const { username } = useCookies();
 
   return (
     <>

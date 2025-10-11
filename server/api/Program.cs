@@ -6,6 +6,7 @@ using api.Data;
 using api.Models;
 using api.Service;
 using api.Interfaces;
+using api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<FlashyDbContext>(opts => opts.UseNpgsql(connectionString));
 
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IFoldersRepository, FoldersRepository>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(options => {
   options.Password.RequireDigit = true;
   options.Password.RequireUppercase = true;
@@ -51,7 +53,8 @@ builder.Services.AddCors(options =>
   {
     policy.WithOrigins("http://localhost:5173")
       .AllowAnyHeader()
-      .AllowAnyMethod();
+      .AllowAnyMethod()
+      .AllowCredentials();
   });
 });
 

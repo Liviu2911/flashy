@@ -1,14 +1,14 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import FormImage from "../../components/form/image";
 import LoginForm from "../../components/form/login";
-import getCookies from "../../helpers/getCookies";
+import useCookies from "../../hooks/useCookies";
 
 export const Route = createFileRoute("/login/")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  const { username } = getCookies();
+  const { username } = useCookies();
   const navigate = useNavigate();
   if (username) navigate({ to: "/" + username });
 

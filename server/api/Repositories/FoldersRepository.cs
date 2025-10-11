@@ -15,9 +15,18 @@ public class FoldersRepository : IFoldersRepository
     _context = context;
   }
 
-  public async Task<List<Folder>> GetFolders(string username)
+  public async Task<List<FolderDto>> GetFolders(string username)
   {
-    var folders = await _context.Folders.Where(f => f.User == username).Include(f => f.Flashcards).ToListAsync();
+    var folders = await _context.Folders.Where(f => f.User == username)
+      .Include(f => f.Flashcards)
+      .Select(f => new FolderDto 
+          {
+            Id = f.Id,
+            Name = f.Name,
+            User = f.User,
+            Flashcards = f.Flashcards.Select(fl => new FlashcardDto { Id = fl.Id, Front = fl.Front, Back = fl.Back, FolderId = fl.FolderId }).ToList()
+          })
+      .ToListAsync();
     return folders;
   }
 

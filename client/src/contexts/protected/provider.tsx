@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Children } from "../../types/default";
 import { ProtectedContext } from "./context";
-import getUser from "../../helpers/getuser";
+import getUser from "../../hooks/getuser";
 import { useNavigate } from "@tanstack/react-router";
 
 function ProtectedProvider({

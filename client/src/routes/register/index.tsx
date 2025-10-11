@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import FormImage from "../../components/form/image";
 import RegisterForm from "../../components/form/register";
-import getCookies from "../../helpers/getCookies";
+import useCookies from "../../hooks/useCookies";
 import { useNavigate } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/register/")({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/register/")({
 });
 
 function RouteComponent() {
-  const { username } = getCookies();
+  const { username } = useCookies();
   const navigate = useNavigate();
   if (username) navigate({ to: "/" + username });
 

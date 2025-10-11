@@ -1,9 +1,9 @@
-import getCookies from "./getCookies";
+import useCookies from "./useCookies";
 
-async function getUser(
+async function useUser(
   username?: string,
 ): Promise<{ username: string; token: string } | undefined> {
-  const cookies = getCookies();
+  const cookies = useCookies();
   if (!cookies.token || !cookies.username) return;
 
   if (username && username !== cookies.username) return;
@@ -27,4 +27,4 @@ async function getUser(
   }
 }
 
-export default getUser;
+export default useUser;

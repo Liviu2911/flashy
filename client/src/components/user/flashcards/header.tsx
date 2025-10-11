@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex flex-row justify-between items-center px-12 mt-12">
+    <div className="flex flex-row justify-between items-center px-2">
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-semibold">Folder name</h1>
         {/* Number of cards */}

@@ -17,57 +17,12 @@ public class FoldersController : ControllerBase
 
   [Authorize]
   [HttpGet]
-  public async Task<IActionResult> GetFoldersAsync([FromBody] GetFolders user)
+  public async Task<IActionResult> GetFoldersAsync()
   {
-    var username = user.Username;
+    var username = Request.Cookies["username"];
+    if (username == null) return BadRequest("username not found");
     var folders = await _repo.GetFolders(username); 
-    
-    var dto = folders.Select(f => new FolderDto 
-        {
-          Id = f.Id,
-          Name = f.Name,
-          User = f.User,
-          Flashcards = f.Flashcards.Select(fl => new FlashcardDto
-              {
-                Id = fl.Id,
-                Front = fl.Front,
-                Back = fl.Back,
-                FolderId = fl.Id,
-              }).ToList()
-        }).ToList();
 
-    return Ok(dto);
-  }
-
-  [Authorize]
-  [HttpPost]
-  public async Task<IActionResult> CreateFolder([FromBody] NewFolder newFolder)
-  {
-    try 
-    {
-      var folder = await _repo.CreateFolder(newFolder);
-      return Ok(folder);
-    } catch(Exception e)
-    {
-      return StatusCode(500, new { message = e.Message, trace = e.StackTrace });
-    }
-  }
-
-  [Authorize]
-  [HttpPut("{id:int}")]
-  public async Task<IActionResult> EditFolder([FromRoute] int id, [FromBody] EditFolder editFolder)
-  {
-    var folder = await _repo.EditFolder(id, editFolder.Name);
-    if (folder == null) return StatusCode(500, "Server error");
-    return Ok(folder);
-  }
-
-  [Authorize]
-  [HttpDelete("{id:int}")]
-  public async Task<IActionResult> DeleteFolder([FromRoute] int id)
-  {
-    var folder = await _repo.DeleteFolder(id);
-    if (folder == null) return StatusCode(500, "Server error");
-    return Ok(folder);
+    return Ok(folders);
   }
 }
